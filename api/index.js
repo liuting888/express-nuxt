@@ -1,6 +1,6 @@
+const path = require('path')
 const createError = require('http-errors')
 const express = require('express')
-const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
@@ -23,21 +23,17 @@ app.use(express.urlencoded({
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-//中间件来设置所有response编码为utf-8
+// 中间件来设置所有response编码为utf-8
 app.all('*', function (req, res, next) {
-  res.header("Content-Type", "text/html; charset=utf-8")
+  res.header('Content-Type', 'text/html; charset=utf-8')
   next()
 })
 
-const users = require('./routes/users')
-const test = require('./routes/test')
-
 // Import API Routes
 app.use('/', indexRouter)
-app.use(users)
-app.use(test)
+app.use(usersRouter)
+app.use(testRouter)
 app.use('/wx', wxRouter)
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
