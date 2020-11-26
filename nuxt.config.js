@@ -46,7 +46,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/http'
+  ],
 
   /*
    ** Auto import components
@@ -70,14 +72,14 @@ export default {
     '@nuxt/http'
   ],
   http: {
-    baseURL: 'http://192.168.1.191:3000', // Used as fallback if no runtime config is provided
+    baseURL: 'http://192.168.0.191:3000' // 重置请求路径
     // browserBaseURL: 'http://localhost:3001'
-    proxy: true
+    // proxy: true
   },
-  proxy: {
-    '/api/': 'http://192.16.0.191:3000',
-    '/api2/': 'http://api.another-website.com'
-  },
+  // proxy: {
+  //   '/api/': 'http://192.16.0.191:3000',
+  //   '/api2/': 'http://api.another-website.com'
+  // },
   publicRuntimeConfig: {
     http: {
       browserBaseURL: process.env.BROWSER_BASE_URL
