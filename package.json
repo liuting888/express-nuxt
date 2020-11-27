@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@nuxt/http": "latest",
-    "nuxt": "latest",
+    "axios": "^0.21.0",
+    "cookie-parser": "~1.4.4",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "cookie-parser": "~1.4.4",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nuxt": "latest"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

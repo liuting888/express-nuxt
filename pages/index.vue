@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     async getList () {
-      const data = await this.$http.$post('/api/wx/query', { abc: '123' })
+      const data = await this.$axios.post('/api/wx/query', { abc: '123' })
       this.list = data
       console.log(123, data)
     }

@@ -47,7 +47,8 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    '~/plugins/http'
+    '~/plugins/http',
+    '~/plugins/axios'
   ],
 
   /*
